@@ -33,11 +33,7 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
+  plugins: [],
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
@@ -46,8 +42,8 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  modules: ['@nuxtjs/axios'],
+  axios: {},
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {

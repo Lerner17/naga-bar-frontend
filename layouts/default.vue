@@ -41,7 +41,7 @@
         <v-list-item-group color="#B08D4E">
           <v-list-item v-for="c in categories" :key="c.title">
             <v-list-item-avatar>
-              <v-img src="/products/1.JPG" />
+              <v-img v-if="c.image" :src="c.image" />
             </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title v-text="c.title" />
@@ -75,13 +75,12 @@
         :key="link.title"
         :to="link.link"
         tag="div"
-        style="height: 100%;"
+        style="height: 45px"
       >
         <v-btn class="hidden-sm-and-down" height="100%" text>
           {{ link.title }}
         </v-btn>
       </nuxt-link>
-      <Cart />
     </v-app-bar>
     <v-content>
       <v-container fluid fill-height>
@@ -90,8 +89,26 @@
             <nuxt />
           </v-flex>
           <v-flex>
-            <v-footer height="300px">
-              <img src="/image/logo.png" height="60px" />
+            <v-footer>
+              <v-layout column>
+                <v-flex>
+                  <address class="pt-1">
+                    <v-icon class="pr-1">mdi-map-marker</v-icon>
+                    Земляной вал 14/16 стр 1
+                  </address>
+                </v-flex>
+                <v-flex>
+                  <v-icon>mdi-phone</v-icon>
+                  +7 888 88 11 11
+                </v-flex>
+              </v-layout>
+              <v-label>
+                <v-flex>
+                  <v-btn href="https://www.instagram.com/naga.bar/">
+                    <v-icon>mdi-instagram</v-icon>
+                  </v-btn>
+                </v-flex>
+              </v-label>
             </v-footer>
           </v-flex>
         </v-layout>
@@ -101,9 +118,7 @@
 </template>
 
 <script>
-import Cart from '@/components/Cart.vue'
 export default {
-  components: { Cart },
   data() {
     return {
       drawer: true,
@@ -116,14 +131,13 @@ export default {
           icon: 'mdi-account-plus'
         }
       ],
-      categories: [
-        { title: 'Суши' },
-        { title: 'Ролы' },
-        { title: 'Вок' },
-        { title: 'Супы' },
-        { title: 'Салаты' }
-      ]
+      categories: []
     }
+  },
+  mounted() {
+    this.$axios.$get('https://naga.bar/api/v1/goods-category/').then((data) => {
+      this.categories = data
+    })
   }
 }
 </script>
