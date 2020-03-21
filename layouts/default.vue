@@ -39,8 +39,8 @@
       <v-list rounded>
         <v-subheader>Категории меню</v-subheader>
         <v-list-item-group color="#B08D4E">
-          <nuxt-link
-            tag="v-list-item"
+          <v-list-item
+            nuxt
             v-for="c in categories"
             :key="c.title"
             :to="`/goods/category/${c.id}`"
@@ -51,7 +51,7 @@
             <v-list-item-content>
               <v-list-item-title v-text="c.title" />
             </v-list-item-content>
-          </nuxt-link>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
