@@ -104,8 +104,8 @@
                   </address>
                 </v-flex>
                 <v-flex>
-                  <v-icon>mdi-phone</v-icon>
-                  +7 888 88 11 11
+                  <v-icon class="pr-1">mdi-phone</v-icon>
+                  <a href="tel:+74951977677">+7 495 197 76 77</a>
                 </v-flex>
               </v-layout>
               <v-label>
