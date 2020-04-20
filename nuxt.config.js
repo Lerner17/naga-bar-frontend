@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   mode: 'universal',
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: 'Naga Lounge Bar',
@@ -22,27 +22,26 @@ export default {
     ]
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#fff' },
   /*
-  ** Global CSS
-  */
-  css: [
-  ],
+   ** Global CSS
+   */
+  css: [],
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [],
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
   /*
-  ** Nuxt.js modules
-  */
-  modules: ['@nuxtjs/axios'],
+   ** Nuxt.js modules
+   */
+  modules: ['@nuxtjs/axios', 'cookie-universal-nuxt'],
   axios: {},
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -62,12 +61,12 @@ export default {
     }
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {}
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
   }
 }

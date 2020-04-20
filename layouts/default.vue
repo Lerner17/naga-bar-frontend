@@ -113,6 +113,11 @@
       <v-container fluid fill-height>
         <v-layout column justify-center>
           <v-flex>
+            <v-alert color="#B08D4E" class="ma-2 title" outlined>
+              20% СКИДКА при оформлении самовывоза
+            </v-alert>
+          </v-flex>
+          <v-flex>
             <nuxt />
           </v-flex>
           <v-flex>
@@ -141,6 +146,13 @@
         </v-layout>
       </v-container>
     </v-content>
+    <v-snackbar v-model="snackbar" :timeout="0">
+      Мы используем файлы cookie для того, чтобы предоставить Вам больше
+      возможностей при использовании сайта.
+      <v-btn @click="snackbarClose" color="pink" text>
+        Закрыть
+      </v-btn>
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -165,13 +177,20 @@ export default {
         //   icon: 'mdi-account-plus'
         // }
       ],
-      categories: []
+      categories: [],
+      snackbar: true | this.$cookies.get('cookieNotufucatin')
     }
   },
   mounted() {
     this.$axios.$get('https://naga.bar/api/v1/goods-category/').then((data) => {
       this.categories = data
     })
+  },
+  methods: {
+    snackbarClose() {
+      this.snackbar = false
+      this.$cookies.set('cookieNotufucatin', false)
+    }
   }
 }
 </script>

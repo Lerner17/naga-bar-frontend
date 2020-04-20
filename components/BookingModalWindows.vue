@@ -11,13 +11,11 @@
       </v-card-title>
       <v-card-text>
         <v-container grid-list-md>
-          <v-form ref="form" v-model="valid" validation>
-            <p>
-              Для оформления заказа позвоните по номеру:
-              <a href="tel: +7 991 304 82 72">+7 991 304 82 72</a>,
-              <a href="tel: +7 495 19 77677">+7 495 19 77677</a>
-            </p>
-          </v-form>
+          <p>
+            Для оформления заказа позвоните по номеру:
+            <a href="tel: +7 991 304 82 72">+7 991 304 82 72</a>,
+            <a href="tel: +7 495 19 77677">+7 495 19 77677</a>
+          </p>
         </v-container>
       </v-card-text>
       <v-card-actions>
