@@ -6,7 +6,7 @@
       <v-card-subtitle class="pb-0">{{ price }}₽</v-card-subtitle>
       <v-card-actions class="pa-5">
         <v-spacer></v-spacer>
-        <nuxt-link :to="`goods/${id}`" tag="div">
+        <nuxt-link :to="`/goods/${id}`" tag="div">
           <v-btn text="">Подробнее</v-btn>
         </nuxt-link>
       </v-card-actions>

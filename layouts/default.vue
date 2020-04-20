@@ -51,7 +51,12 @@
       <v-list rounded>
         <v-subheader>Категории меню</v-subheader>
         <v-list-item-group color="#B08D4E">
-          <v-list-item v-for="c in categories" :key="c.title">
+          <v-list-item
+            v-for="c in categories"
+            :key="c.title"
+            :to="`/goods/category/${c.id}`"
+            nuxt
+          >
             <v-list-item-avatar>
               <v-img v-if="c.image" :src="c.image" />
             </v-list-item-avatar>
@@ -91,6 +96,7 @@
         </a>
       </address>
       <v-spacer></v-spacer>
+      <BookingModalWindows />
       <nuxt-link
         v-for="link in links"
         :key="link.title"
@@ -139,18 +145,25 @@
 </template>
 
 <script>
+import BookingModalWindows from '../components/BookingModalWindows'
 export default {
+  components: { BookingModalWindows },
   data() {
     return {
       drawer: true,
+      dialog: false,
       links: [
-        { title: 'Меню', link: '/goods/all', icon: 'mdi-ballot-outline' },
-        { title: 'Вход', link: '/auth/login', icon: 'mdi-login-variant' },
-        {
-          title: 'Регистрация',
-          link: '/auth/register',
-          icon: 'mdi-account-plus'
-        }
+        // {
+        //   title: 'Забронировать столик',
+        //   link: '/goods/all',
+        //   icon: 'mdi-pencil'
+        // }
+        // { title: 'Вход', link: '/auth/login', icon: 'mdi-login-variant' },
+        // {
+        //   title: 'Регистрация',
+        //   link: '/auth/register',
+        //   icon: 'mdi-account-plus'
+        // }
       ],
       categories: []
     }
@@ -170,7 +183,7 @@ address {
   font-style: normal;
   font-size: 18px;
 }
-/* 
+/*
 .v-input--is--focused {
 
 } */

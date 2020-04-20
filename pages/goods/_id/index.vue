@@ -3,15 +3,18 @@
     <v-layout row justify-center>
       <v-flex sm12 md6>
         <v-card>
-          <v-img src="/products/1.JPG" class="align-end" height="200px" />
+          <v-img :src="item.image" class="align-end" height="200px" />
           <v-card-title>
             <v-layout column>
               <v-flex align-self-start>
-                <h1>Вок</h1>
+                <h1>{{ item.title }}</h1>
               </v-flex>
               <v-flex class="pt-4 pl-2">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                <p v-if="item.description">
+                  {{ item.description }}
+                </p>
+                <p v-else>
+                  Нет описания
                 </p>
               </v-flex>
               <v-flex align-self-start>
@@ -28,3 +31,20 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      item: null
+    }
+  },
+  mounted() {
+    this.$axios
+      .$get(`https://naga.bar/api/v1/goods/${this.$route.params.id}/`)
+      .then((data) => {
+        this.item = data
+      })
+  }
+}
+</script>
