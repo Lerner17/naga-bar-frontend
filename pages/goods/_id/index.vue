@@ -22,10 +22,10 @@
               </v-flex>
             </v-layout>
           </v-card-title>
-          <v-card-actions>
+          <!-- <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="#ac8f58">Добавить в корзину</v-btn>
-          </v-card-actions>
+          </v-card-actions> -->
         </v-card>
       </v-flex>
     </v-layout>
