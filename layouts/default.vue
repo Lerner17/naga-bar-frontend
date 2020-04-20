@@ -126,7 +126,7 @@
                 </v-flex>
                 <v-flex class="pl-5 pt-2">
                   <v-icon class="pr-1">mdi-phone</v-icon>
-                  +7 888 88 11 11, +7 495 19 77677
+                  +7 991 304 82 72, +7 495 19 77677
                 </v-flex>
               </v-layout>
               <v-label>
