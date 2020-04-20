@@ -7,13 +7,25 @@
           <v-list-item
             class="hidden-md-and-up pl-5"
             tag="a"
-            href="tel: +7 985 782 45 45"
+            href="tel: +7 495 19 77677"
           >
             <v-list-item-action>
               <v-icon>mdi-phone</v-icon>
             </v-list-item-action>
             <v-list-item-title tag="address">
-              +7 985 782 45 45
+              +7 495 19 77677
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item
+            class="hidden-md-and-up pl-5"
+            tag="a"
+            href="tel: +7 991 304 82 72"
+          >
+            <v-list-item-action>
+              <v-icon>mdi-phone</v-icon>
+            </v-list-item-action>
+            <v-list-item-title tag="address">
+              +7 991 304 82 72
             </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
@@ -69,6 +81,15 @@
           +7 991 304 82 72
         </a>
       </address>
+      <address class="hidden-sm-and-down">
+        <v-icon class="pr-1">mdi-phone</v-icon>
+        <a
+          style="text-decoration: none; color: white;"
+          href="tel: +7 495 19 77677"
+        >
+          +7 495 19 77677
+        </a>
+      </address>
       <v-spacer></v-spacer>
       <nuxt-link
         v-for="link in links"
@@ -94,12 +115,12 @@
                 <v-flex>
                   <address class="pt-1">
                     <v-icon class="pr-1">mdi-map-marker</v-icon>
-                    Земляной вал 14/16 стр 1
+                    Земляной вал 14-16 стр 1
                   </address>
                 </v-flex>
-                <v-flex>
-                  <v-icon>mdi-phone</v-icon>
-                  +7 888 88 11 11
+                <v-flex class="pl-5 pt-2">
+                  <v-icon class="pr-1">mdi-phone</v-icon>
+                  +7 888 88 11 11, +7 495 19 77677
                 </v-flex>
               </v-layout>
               <v-label>
